@@ -13,8 +13,8 @@ public class MyScript : MonoBehaviour {
 
 	System.DateTime getSundayH00M00S00(System.DateTime dt) {
 		System.DateTime res = dt;
-		dt -= new TimeSpan ((int)dt.DayOfWeek, dt.Hour, dt.Minute, dt.Second);
-		return dt;
+		res -= new TimeSpan ((int)res.DayOfWeek, res.Hour, res.Minute, res.Second);
+		return res;
 	}
 
 	float getDayHourMinFractionOfWeek(System.DateTime dt) {
@@ -40,7 +40,7 @@ public class MyScript : MonoBehaviour {
 		daysFraction= getDayHourMinFractionOfWeek (System.DateTime.Now);
 		Debug.Log (daysFraction.ToString ("0.000"));
 	}
-
+	
 	void Start () {
 		Test_weekly ();
 	}
